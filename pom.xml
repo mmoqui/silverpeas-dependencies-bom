@@ -32,7 +32,7 @@
 
   <groupId>org.silverpeas</groupId>
   <artifactId>silverpeas-dependencies-bom</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.5-wildfly26</version>
   <packaging>pom</packaging>
   <name>Silverpeas Dependencies BOM</name>
   <description>A BOM with all the dependencies required to build and run Silverpeas</description>
@@ -877,13 +877,23 @@
         <artifactId>resteasy-html</artifactId>
         <version>${resteasy.version}</version>
         <exclusions>
+          <!--
           <exclusion>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
           </exclusion>
+          -->
           <exclusion>
             <groupId>org.jboss.logging</groupId>
             <artifactId>jboss-logging</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-core</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_4.0_spec</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -1120,11 +1130,11 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <owasp.version>1.2.3</owasp.version>
     <!-- WARNING: the following dependencies version must be equal to the one provided by Wildfly -->
-    <slf4j.version>1.7.32</slf4j.version>
-    <log4j.version>2.17.1</log4j.version>
-    <resteasy.version>3.15.3.Final</resteasy.version>
-    <hibernate.version>5.4.24.Final</hibernate.version>
-    <jackson-version>2.12.3</jackson-version>
+    <slf4j.version>1.7.36</slf4j.version>
+    <log4j.version>2.17.2</log4j.version>
+    <resteasy.version>4.7.6.Final</resteasy.version>
+    <hibernate.version>5.3.24.Final</hibernate.version>
+    <jackson-version>2.12.6</jackson-version>
     <lucene.version>7.1.0</lucene.version>
     <!-- WARNING: the following dependencies' version must be equal to the one on which depends
          Silverpeas-Jackrabbit-JCA as they are provided by it -->
